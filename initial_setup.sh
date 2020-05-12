@@ -67,3 +67,5 @@ sudo groupadd i2c
 sudo chown :i2c /dev/i2c-1
 sudo chmod g+rw /dev/i2c-1
 sudo usermod -aG i2c $USER
+#
+sudo apt install python3-pil -y
