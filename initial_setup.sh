@@ -47,3 +47,23 @@ sudo apt-get install nano
 sudo apt-get install v4l-utils
 echo "Ubuntu Packages - end"
 
+# Permission for USB
+
+# Create user to run things on startup
+# https://forums.developer.nvidia.com/t/how-to-run-a-script-on-boot/108411/2
+sudo adgroup --system geoff
+sudo adduser --system --no-create-home --disabled-login --disabled-password --ingroup robot robot
+sudo adduser geoff dialout
+sudo adduser geoff i2c
+sudo adduser geoff gpio
+# Create service and script...
+sudo touch /lib/systemd/system/geoff.service
+# need to edit this file...
+echo "you need to edit geoff.service"
+#
+# PiOLED
+sudo -H pip3 install Adafruit_SSD1306
+sudo groupadd i2c
+sudo chown :i2c /dev/i2c-1
+sudo chmod g+rw /dev/i2c-1
+sudo usermod -aG i2c $USER
