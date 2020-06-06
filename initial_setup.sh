@@ -51,15 +51,22 @@ echo "Ubuntu Packages - end"
 
 # Create user to run things on startup
 # https://forums.developer.nvidia.com/t/how-to-run-a-script-on-boot/108411/2
-sudo adgroup --system geoff
-sudo adduser --system --no-create-home --disabled-login --disabled-password --ingroup robot robot
-sudo adduser geoff dialout
-sudo adduser geoff i2c
-sudo adduser geoff gpio
-# Create service and script...
-sudo touch /lib/systemd/system/geoff.service
-# need to edit this file...
-echo "you need to edit geoff.service"
+#sudo adgroup --system geoff
+#sudo adduser --system --no-create-home --disabled-login --disabled-password --ingroup robot robot
+#sudo adduser geoff dialout
+#sudo adduser geoff i2c
+#sudo adduser geoff gpio
+
+# Create suto-start service
+echo "AutoStart - start"
+sudo cp scripts/geoff_startup.sh /usr/local/bin
+sudo chmod 755 /usr/local/bin/geoff_startup.sh
+sudo cp scripts/geoff.service /lib/systemd/system/geoff.service
+sudo systemctl daemon-reload
+sudo systemctl start geoff
+sudo systemctl enable geoff
+echo "Autostart - end"
+
 #
 # PiOLED
 sudo -H pip3 install Adafruit_SSD1306
@@ -68,4 +75,4 @@ sudo chown :i2c /dev/i2c-1
 sudo chmod g+rw /dev/i2c-1
 sudo usermod -aG i2c $USER
 #
-sudo apt install python3-pil -y
+#sudo apt install python3-pil -y
