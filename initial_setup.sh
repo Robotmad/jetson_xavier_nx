@@ -23,11 +23,16 @@ sudo systemctl disable nvgetty
 sudo usermod -a -G tty $USER
 echo "UART - end"
 
+# Give permissions to access the USB serial Port
+echo "USB serial port permissions - start"
+sudo usermod -a -G dialout $USER
+echo "USB Serial port permissions - end"
+
 # Setup for VNC Server
-echo "***Vino VNS Server***"
+echo "Vino VNS Server - start"
 gsettings set org.gnome.Vino require-encryption false
 gsettings set org.gnome.Vino prompt-enabled false
-echo ""
+echo "Vino VNC Server - end"
 
 # disable syslog to prevent large log files from collecting
 echo "Syslog - start"
