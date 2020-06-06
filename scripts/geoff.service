@@ -1,0 +1,9 @@
+[Unit]
+Description="Geoff Service"
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/geoff_startup.sh
+Restart=on-failure
+User=nx
+[Install]
+WantedBy=multi-user.target
