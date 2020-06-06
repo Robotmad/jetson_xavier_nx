@@ -37,14 +37,13 @@ echo "Syslog - end"
 
 # enable all Ubuntu packages:
 echo "Ubuntu Packages - start"
-sudo apt-get install apt-utils
+sudo apt install apt-utils
 sudo apt-add-repository universe
 sudo apt-add-repository multiverse
 sudo apt-add-repository restricted
-sudo apt-get update
 sudo apt update
-sudo apt-get install nano
-sudo apt-get install v4l-utils
+sudo apt install nano
+sudo apt install v4l-utils
 echo "Ubuntu Packages - end"
 
 # Permission for USB
