@@ -37,13 +37,13 @@ echo "Syslog - end"
 
 # enable all Ubuntu packages:
 echo "Ubuntu Packages - start"
-sudo apt install apt-utils
+sudo apt -y install apt-utils
 sudo apt-add-repository universe
 sudo apt-add-repository multiverse
 sudo apt-add-repository restricted
-sudo apt update
-sudo apt install nano
-sudo apt install v4l-utils
+sudo apt -y update
+sudo apt -y install nano
+sudo apt -y install v4l-utils
 echo "Ubuntu Packages - end"
 
 # Permission for USB
@@ -58,9 +58,11 @@ echo "Ubuntu Packages - end"
 
 # Create suto-start service
 echo "AutoStart - start"
-sudo cp scripts/geoff_startup.sh /usr/local/bin
+sudo systemctl stop geoff
+sudo systemctl disable geoff
+sudo cp scripts/geoff_startup.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/geoff_startup.sh
-sudo cp scripts/geoff.service /lib/systemd/system/geoff.service
+sudo cp scripts/geoff.service /lib/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start geoff
 sudo systemctl enable geoff
