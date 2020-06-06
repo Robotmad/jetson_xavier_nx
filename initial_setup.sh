@@ -64,12 +64,12 @@ echo "Ubuntu Packages - end"
 # Create suto-start service
 echo "AutoStart - start"
 sudo systemctl stop geoff
-sudo systemctl disable geoff
+#sudo systemctl disable geoff
 sudo cp scripts/geoff_startup.sh /usr/local/bin/
 sudo chmod 755 /usr/local/bin/geoff_startup.sh
 sudo cp scripts/geoff.service /lib/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl start geoff
+# leave starting until reboot #sudo systemctl start geoff
 sudo systemctl enable geoff
 echo "Autostart - end"
 
