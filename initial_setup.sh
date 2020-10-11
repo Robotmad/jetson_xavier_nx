@@ -75,6 +75,8 @@ echo "Autostart - end"
 
 #
 # PiOLED
+sudo apt install python3-pip
+pip3 --version
 sudo -H pip3 install Adafruit_SSD1306
 sudo groupadd i2c
 sudo chown :i2c /dev/i2c-1
