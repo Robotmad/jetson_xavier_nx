@@ -9,6 +9,7 @@ sudo apt install -y gcc g++ make
 sudo npm install -g yarn
 yarn --version 
 cd ~/ 
+# do this by hand as we don't want root to own the folder etc...
 git clone https://github.com/microsoft/vscode 
 cd vscode 
 yarn 
