@@ -34,5 +34,6 @@ git clone git@github.com:Robotmad/Robot
 # Torch2TRT
 git clone git@github.com:NVIDIA-AI-IOT/torch2trt
 
+sudo apt install ros-melodic-compressed-image-transport
 sudo apt install ros-melodic-cv-camera
 
