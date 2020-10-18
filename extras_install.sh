@@ -29,10 +29,14 @@ sudo python3 setup.py install
 #https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-6-0-now-available/72048
 
 # Robot Repo
+cd ~/
 git clone git@github.com:Robotmad/Robot
 
 # Torch2TRT
+cd ~/
 git clone git@github.com:NVIDIA-AI-IOT/torch2trt
+cd torch2trt
+sudo python3 setup.py install --plugins
 
 sudo apt install ros-melodic-compressed-image-transport
 sudo apt install ros-melodic-cv-camera
