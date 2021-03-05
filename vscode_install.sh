@@ -1,3 +1,4 @@
+# this is not necessary any more as there is better support now - see JetsonHacks instructions
 sudo apt install -y build-essential make cmake cmake-curses-gui git g++ pkg-config curl libfreetype6-dev libcanberra-gtk-module libcanberra-gtk3-module python3-dev python3-testresources python3-pip 
 sudo apt install -y git libx11-dev libxkbfile-dev libsecret-1-dev fakeroot rpm libnss3 apt-transport-https 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - 
