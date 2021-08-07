@@ -74,13 +74,15 @@ sudo systemctl enable geoff
 echo "Autostart - end"
 
 #
-# PiOLED
+# PiOLED (1 for Nano, 8 for NX)
 sudo apt install python3-pip
 pip3 --version
 sudo -H pip3 install Adafruit_SSD1306
 sudo groupadd i2c
 sudo chown :i2c /dev/i2c-1
 sudo chmod g+rw /dev/i2c-1
+sudo chown :i2c /dev/i2c-8
+sudo chmod g+rw /dev/i2c-8
 sudo usermod -aG i2c $USER
 #
 #sudo apt install python3-pil -y
